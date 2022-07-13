@@ -107,3 +107,22 @@
   yield n
 - g = get_natural_number()
 - next(g) // 1, 2, 3 next로 g를 호출할 때마다 1씩 증가된 값을 리턴한다
+
+# Range
+
+- 제너레이터의 방식을 활용하는 대표적임 함수는 range이다
+- list(range(5)) // [0, 1, 2, 3, 4]
+- range(5) // range(0, 5)
+- for i in range(5):
+  print(i) // 0, 1, 2, 3, 4 출력
+- python3 부터 range() 함수가 리턴하는 값이 제너레이터 역할을 하는 것으로 바뀜
+- 숫자 100만개를 생성하는 방법
+  - 방법 1
+    - a = [n for n in range(1000000)]
+    - 이미 생성된 값이 담겨 있다
+    - getsizeof(a) // 8448728
+  - 방법 2
+    - b = range(100000)
+    - range 함수로 조건만 담겨 있다
+    - getsizeof(b) // 48
+    - b[500] // 500 인덱스로 접근도 가능하다
