@@ -74,3 +74,21 @@
   - pip install mypy
 - Python Module 실행
   - python3 -m mypy python_file_name.py
+
+# 리스트 컴프리헨션
+
+- 기존 리스트를 기반으로 새로운 리스트를 만들어내는 구문
+- 파이썬 2.0부터 지원했음
+- 홀수인 경우 2를 곱해 출력하는 리스트 컴프리헨션
+  - [n * 2 for n in range(1, 10 + 1) if n % 2 == 1]
+  - 리스트 컴프리헨션을 사용하지 않을 경우
+    - a = []
+      for n in range(1, 10 + 1):
+      if n % 2 == 1:
+      a.append(n \* 2)
+  - 코드 길이도 줄어들고 변수의 양도 줄어들게 된다
+- 딕션너리의 경우도 컴프리헨션이 가능하다
+  - a = {key, value for key, value in original.items()}
+  - a = {}
+    for key, value in original.items():
+    a[key] = value
