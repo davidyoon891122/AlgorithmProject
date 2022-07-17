@@ -126,3 +126,13 @@
     - range 함수로 조건만 담겨 있다
     - getsizeof(b) // 48
     - b[500] // 500 인덱스로 접근도 가능하다
+
+# Enumerate
+
+- 열거하다 라는 뜻의 함수
+- 여러가지 자료형(List, Set, Tuple 등)을 인덱스를 포함한 enumerate 객체로 리턴한다.
+- a = [1, 2, 3]
+  enumerate(a) // 0, 1 1, 2 2, 3 형태로 열거형 반환, 반환한 값을 list(enum) 리스트화 하여 사용
+- 출력
+  for i, v in enumerate(a):
+  print(i, v)
