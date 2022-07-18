@@ -136,3 +136,46 @@
 - 출력
   for i, v in enumerate(a):
   print(i, v)
+
+# 나눗셈 연산자 //
+
+- 파이썬 2이하에서는 / 연산자는 타입을 유지하려는 특성 때문에 실수하기가 쉬웠다
+- 5 / 3 의 경우 파이썬 3 이상에서는 1.666..이지만 파이썬 2이하 버전에서는 정수형을 유지해 1을 리턴했다
+- 파이썬 3에서는 // 연산자가 타입을 유지하는 형태의 나눗셈 연산자로 추가 되었다(몫을 구하는 연산자)
+
+# print
+
+- 파이썬 2에서는 Statement 였으나, 3에서는 print() 함수로 바뀌었다
+- print('a', 'b') // a b
+- print('a', 'b', sep=',') // a, b
+- print()는 항상 줄바꿈을 포함한다 end 파라미터로 줄바꿈을 제거할 수 있다.
+- print('a', end=' ')
+  print('b') // a b
+- 리스트를 출력할떄는 join을 사용한다
+- a = ['a', 'b']
+  print(' '.join(a)) // a b
+- formatting
+- idx = 1
+  fruit = 'Apple'
+  print('{0}: {1}'.format(idx + 1, fruit)) // 2: Apple
+- 인덱스는 생략 가능하다
+- print('{}: {}'.format(idx + 1, fruit)) // 2: Apple
+- f-string(formated string literal)
+  print(f'{idx + 1}: {fruit}) // 2: Apple
+  - 파이썬 3.6+ 에서만 지원한다
+
+# pass
+
+- 임시 함수, 임시 클래스(즉 미완성) 등을 작성하고 에러를 예외 처리하기 위해서 내용에 pass를 사용하여 처리
+- class MyClass(object):
+  def method_a(self):
+
+  def method_b(self):
+  print('Method B')
+  c = MyClass() // IndentationError
+
+- def method_a(self) 함수에 pass를 삽입하여 에러를 방지할 수 있다.
+- def method_a(self):
+  pass
+- 파이썬에서 pass는 널 연산(Null Operation)으로 아무것도 하지 않는 기능
+- pass는 목업(mockup) 인터페이스부터 구현한 다음에 추후 구현을 진행할 수 있게 한다.
