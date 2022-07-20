@@ -179,3 +179,10 @@
   pass
 - 파이썬에서 pass는 널 연산(Null Operation)으로 아무것도 하지 않는 기능
 - pass는 목업(mockup) 인터페이스부터 구현한 다음에 추후 구현을 진행할 수 있게 한다.
+
+# locals
+
+- 로컬 심볼 테이블 딕셔너리를 가져오는 메소드
+- 선언된 모든 변수를 조회할 수 있는 명령
+- import pprint // pprint는 가독성을 위한 줄바꿈 처리를 위해 추가
+  pprint.pprint(locals())
