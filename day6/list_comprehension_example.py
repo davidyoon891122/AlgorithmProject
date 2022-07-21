@@ -22,3 +22,12 @@ for i in range(len(str1) - 1):
         strls_normal_case.append(str1[i:i + 2].lower())
 
 print(strls_normal_case)
+
+# 가독성이 떨어지는 경우
+
+# return [(x, y, z)
+#         for x in range(5)
+#         for y in range(5)
+#         if x != y
+#         for z in range(5)
+#         if y != z]
