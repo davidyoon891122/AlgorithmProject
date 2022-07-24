@@ -194,3 +194,35 @@
   - 리스트 컴프리헨션은 대체로 표현식이 2개를 넘지 않아야 한다
   - 지나치게 복잡한 표현식일 경우에는 풀어 쓰는것이 좋다
   - 역할별로 나누어 2줄로 표현하는 것도 방법이다
+
+# 구글 파이썬 스타일 가이드
+
+- PEF8에서 제공하는 규칙 외에 구글에서 제공하는 가이드라인
+- 가독성을 높이기 위한 지침들이 많다
+- 함수의 기본 값으로 가변 객체(Mutable Object)를 사용하지 않아야 한다
+  - 함수가 객체를 수정하면(리스트에 아이템 추가 등) 기본값이 변경되기 떄문
+  - No: def foo(a, b=[]):
+  - No: def foo(a, b: Mapping = {}):
+  - 다음과 같이 불변 객체(Immutable Object)를 사용, None을 명시적으로 할당하는 것도 좋은 방법
+  - Yes: def foo(a, b=None):
+    if b is None:
+    b = []
+  - Yes: def foo(a, b: Optional[Sequence] = None):
+    if b is None:
+    b = []
+- True, False를 판별할 때는 암시적(Implicit)인 방법을 시도하는 편이 간결하고 가독성이 좋다
+  - 굳이 False임을 if foo != []: 같은 형태로 판별할 필요가 없다
+  - if foo:로 충분하다
+- 이외에도 몇 가지 더 정리
+  - Yes: if not users:
+    print('no users')
+  - Yes: if foo == 0:
+    self.handle_zero()
+  - Yes: if % 10 == 0:
+    self.handle_mutilple_of_ten()
+  - No: if len(users) == 0:
+    print('no users')
+  - No: if foo is not None and not foo:
+    self.handle_zero()
+  - No: if not i % 10:
+    self.handle_mutiple_of_ten()
