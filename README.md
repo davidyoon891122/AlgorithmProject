@@ -353,3 +353,21 @@
   b = a
   a[0] = 1 # a,b 모두 동일한 id
   b = [1, 1, 2] # a,b가 서로 다른 객체가 된다
+
+# is 와 ==
+
+- is 는 id() 값을 비교한는 함수이다
+- None은 널(null)로서 값 자체가 정의되어 있지 않으므로 ==로 비교가 불가능하다
+- 따라서 is로만 비교가 가능하다
+- if a is None:
+  pass
+- == 는 비교연산자이다
+- a = [1, 2, 3]
+- a == a // True
+- a == list(a) // True
+- a is a // True
+- a is list(a) // False
+  - 값은 동일하지만 list()로 한 번 더 묶어주면, 별도의 객체로 복사가 되고 다른 ID를 갖게 된다
+- a == copy.deepcopy(a) // True
+- a is copy.deepcopy(a) // False
+  - copy.deepcopy()로 복사한 결과 또는 값은 같지만 ID는 다르기 때문에, ==로 비교하면 True, is로 비교하면 False가 된다
